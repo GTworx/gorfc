@@ -21,13 +21,13 @@ type SAPConfig struct {
 func main() {
 	// Configure your SAP connection parameters
 	config := SAPConfig{
-		Dest:     "KoleksiyonIDES",
-		Client:   "800",       // Your SAP client number
-		User:     "SOOEZY",    // Your SAP username
-		Password: "SAPSooezy", // Your SAP password
+		Dest:     "",
+		Client:   "800",    // Your SAP client number
+		User:     "SOOEZY", // Your SAP username
+		Password: "",       // Your SAP password
 		Lang:     "EN",
-		Ashost:   "s185.126.178.110", // SAP application server host
-		Sysnr:    "00",               // System number
+		Ashost:   "",   // SAP application server host
+		Sysnr:    "00", // System number
 		// Saprouter: "/H/saprouter.example.com/S/3299/H/", // Uncomment if using SAP Router
 	}
 
