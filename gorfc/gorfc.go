@@ -1,5 +1,5 @@
-//go:build (linux && cgo) || (amd64 && cgo) || (darwin && cgo)
-// +build linux,cgo amd64,cgo darwin,cgo
+//go:build (linux && cgo) || (darwin && cgo) || (windows && cgo)
+// +build linux,cgo darwin,cgo windows,cgo
 
 // Package gorfc provides SAP NetWeawer RFC SDK client bindings for GO
 package gorfc
@@ -23,11 +23,12 @@ package gorfc
 // todo MD ? -lpthread -lm
 // todo -nologo -W3 -Z7  -GL -O2 -Oy- /we4552 /we4700 /we4789
 
-#cgo windows CFLAGS: -IC:/Tools/nwrfcsdk/include/
-#cgo windows LDFLAGS: -LC:/Tools/nwrfcsdk/lib/ -lsapnwrfc -llibsapucum
+#cgo windows CFLAGS: -IC:/Users/gokha/Dropbox/_1GNDLF/SAP/nwrfcsdk/include/
+#cgo windows LDFLAGS: -LC:/Users/gokha/Dropbox/_1GNDLF/SAP/nwrfcsdk/lib/ -lsapnwrfc -llibsapucum
 
-#cgo windows LDFLAGS: -O2 -g -pthread -pie -fPIE
-#cgo windows LDFLAGS: -OPT:REF -LTCG
+// Commented out incompatible flags for MinGW
+// #cgo windows LDFLAGS: -O2 -g -pthread -pie -fPIE
+// #cgo windows LDFLAGS: -OPT:REF -LTCG
 // todo -NXCOMPAT -STACK:0x2000000 -SWAPRUN:NET -DEBUG -DEBUGTYPE:CV,FIXUP -MACHINE:amd64 -nologo
 
 // ~~~~ linux ~~~~ //
